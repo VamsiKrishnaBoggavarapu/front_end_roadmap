@@ -8,9 +8,12 @@
 - Good for large scale applications.
 
 ### Rest Parameter
+- Function that can accept an unknown number of arguments or varying the arguments we can use Reset parameter.
 ```typescript
-// This is a TypeScript code block.
-console.log("Hello, world!");
+function buildName(firstName: string, ...restOfName: string[]) {
+  return `${firstName} ${restOfName.join(' ')}`;
+}
+const fullName = buildName('John', 'Doe', 'Smith');
 ```
 
 ### tsconfig.json
