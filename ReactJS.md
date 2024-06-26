@@ -105,22 +105,26 @@ export const Landing = () => {
 ```
 
 ### UseReducer hook
-- Add a reducer to the component
+- useReducer hook help to add a reducer to the component and it can managing more complex state logic.
+- Once place to handle state updates.
 - const [state,dispatch] = userReducer(reducer, initalArg)
 ```javascript
 import React, { useReducer } from "react";
 
 export const Landing = () => {
   const reducer = (state, action) => {
-    if (action.type === "UPDATE") {
-      return {
-        users: [...state.users, { id: Math.random() }],
-      };
-    }
-    if (action.type === "DELETE") {
-      return {
-        users: state.users.slice(1),
-      };
+    switch (action.type) {
+      case "ADD":
+        return {
+          users: [...state.users, { id: Math.random() }],
+        };
+
+      case "REMOVE":
+        return {
+          users: state.users.slice(1),
+        };
+      default:
+        return state;
     }
   };
 
@@ -129,16 +133,16 @@ export const Landing = () => {
   const [state, dispatch] = useReducer(reducer, initalArg);
 
   const update = () => {
-    dispatch({ type: "UPDATE" });
+    dispatch({ type: "ADD" });
   };
 
   const remove = () => {
-    dispatch({ type: "DELETE" });
+    dispatch({ type: "REMOVE" });
   };
   return (
     <div>
-      <button onClick={update}>Update</button>
-      <button onClick={remove}>Delete</button>
+      <button onClick={update}>Add</button>
+      <button onClick={remove}>Remove</button>
       {state.users.map((x) => (
         <p>{x.id}</p>
       ))}
