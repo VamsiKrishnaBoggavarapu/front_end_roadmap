@@ -74,10 +74,9 @@ export const ContextProvider: React.FC<Props> = ({ children }) => {
 };
 
 export default ContextProvider;
+```
 
-import React, { useContext } from "react";
-import { Context } from "./contextProvider";
-
+```typescript
 import React, { useContext } from "react";
 import { ContextProvider, Context } from "./contextProvider";
 import { Landing } from "./pages/Landing";
@@ -105,6 +104,9 @@ export const Theme: React.FC = (): React.ReactNode => {
     </div>
   );
 };
+
+```
+```typescript
 import React, { useContext } from "react";
 import { Context } from "../contextProvider";
 import "../App.css";
@@ -117,8 +119,6 @@ export const Landing = () => {
     </div>
   );
 };
-
-
 ```
 
 ### UseReducer hook
