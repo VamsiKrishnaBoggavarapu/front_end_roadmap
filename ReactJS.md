@@ -10,9 +10,9 @@
 - UseState hook add a state variable to the component.
 - UserState accept one parameter, that can set initail state.
 - UserState return an array of two values, Current state and set function.
-```typescript
+```javascript
 const [msg, setMsg] = useState("Hello");
-function updateMsg(): void {
+function updateMsg() {
     setMsg("Welcom");
 }
 ```
@@ -74,6 +74,7 @@ const App = () => {
 
 export default App;
 ```
+
 ```javascript
 import React, { useContext } from "react";
 import { Context } from "./contextProvider";
@@ -87,7 +88,8 @@ export const Theme = () => {
   );
 };
 ```
-```typescript
+
+```javascript
 import React, { useContext } from "react";
 import { Context } from "../contextProvider";
 import "../App.css";
@@ -100,7 +102,6 @@ export const Landing = () => {
     </div>
   );
 };
-
 ```
 
 ### UseReducer hook
