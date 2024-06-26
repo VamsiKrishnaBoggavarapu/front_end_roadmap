@@ -37,6 +37,7 @@ useEffect(() => {
 ```
 ### UseContext hook
 - Easy to transfer the data from one component to another component
+  ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/useContext.png?raw=true)
 ```typescript
 import React, {
   useState,
@@ -122,6 +123,7 @@ export const Landing = () => {
     </div>
   );
 };
+
 ```
 
 ### UseReducer hook
