@@ -1,1 +1,20 @@
 # ReactJS
+- React is open-source javascript library for build user interfaces.
+- Improved performance: React uses a virtual DOM to keep track of changes to the UI. When a component's state changes, React updates the virtual DOM. The virtual DOM is then compared to the real DOM, and the real DOM is updated only if necessary. This makes React applications very efficient.
+- Resuable components: Components are the building blocks of React applications. A component is a piece of code that encapsulates HTML, CSS, and JavaScript. Components can be nested inside other components to create complex UIs.
+- Unidirectional data flow: React follows a unidirectional data flow.
+
+## React Hooks
+- React-Hooks will help the developer job easier.
+### UseState hook
+### UseEffect hook
+### UseContext hook
+### UseReducer hook
+### UseRef hook
+### UseCallback hook
+### UseMemo hook
+### Custom hooks
+
+## React Routing
+
+## React Redux
