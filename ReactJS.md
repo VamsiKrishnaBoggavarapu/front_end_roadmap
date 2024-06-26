@@ -133,3 +133,5 @@ export const Landing = () => {
 ## React Routing
 
 ## React Redux
+
+![alt text](http://url/to/img.png)
