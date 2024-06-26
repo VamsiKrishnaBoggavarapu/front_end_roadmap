@@ -17,7 +17,7 @@ function updateMsg(): void {
 }
 ```
 ### UseEffect hook
-- Handle the lifecycle methods in function components(componentDidMount,componentDidUpdate and componentWillUnmount)
+- Handle the lifecycle methods in function components (componentDidMount,componentDidUpdate and componentWillUnmount)
 - useEffect(setup, dependencies?)
 ```typescript
 useEffect(() => {
