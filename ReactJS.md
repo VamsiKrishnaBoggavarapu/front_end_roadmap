@@ -7,6 +7,12 @@
 ## React Hooks
 - React-Hooks will help the developer job easier.
 ### UseState hook
+- UseState hook add a state variable to the component.
+- UserState accept one parameter, that can set initail state.
+- UserState return an array of two values, Current state and set function.
+```react
+const [msg, setMsg] = useState("Hello");
+```
 ### UseEffect hook
 ### UseContext hook
 ### UseReducer hook
