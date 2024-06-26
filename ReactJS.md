@@ -12,6 +12,9 @@
 - UserState return an array of two values, Current state and set function.
 ```typescript
 const [msg, setMsg] = useState("Hello");
+function updateMsg(): void {
+    setMsg("Welcom");
+}
 ```
 ### UseEffect hook
 ### UseContext hook
