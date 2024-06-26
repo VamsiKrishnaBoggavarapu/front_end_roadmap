@@ -152,6 +152,26 @@ export const Landing = () => {
 
 ```
 ### UseRef hook
+- Storing mutable values and avoid re-rendering when update the data.
+- Storing reference to DOM element and directly do the operations on DOM element.
+- const ref = useRef(initialValue)
+```javascript
+import React, { useEffect, useRef } from "react";
+
+export const FirstPage = () => {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+
+  return (
+    <div>
+      <input ref={inputRef}></input>
+    </div>
+  );
+};
+```
 ### UseCallback hook
 ### UseMemo hook
 ### Custom hooks
