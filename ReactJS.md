@@ -38,53 +38,30 @@ useEffect(() => {
 ### UseContext hook
 - Easy to transfer the data from one component to another component
   ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/useContext.png?raw=true)
-```typescript
-import React, {
-  useState,
-  createContext,
-  Dispatch,
-  SetStateAction,
-} from "react";
+```javascript
+import React, { createContext, useState } from "react";
 
-interface Props {
-  children: React.ReactNode;
-}
+export const Context = createContext(false, () => {});
 
-interface ContextProps {
-  darkMode: boolean;
-  setDarkMode: Dispatch<SetStateAction<boolean>>;
-}
-
-export const Context = createContext<ContextProps>({
-  darkMode: false,
-  setDarkMode: () => {},
-});
-
-export const ContextProvider: React.FC<Props> = ({ children }) => {
-  const [darkModeOn, setDarkModeOn] = useState<boolean>(false);
-
+export const ContextProvider = ({ children }) => {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <Context.Provider
-      value={{
-        darkMode: darkModeOn,
-        setDarkMode: setDarkModeOn,
-      }}>
+    <Context.Provider value={{ darkMode, setDarkMode }}>
       {children}
     </Context.Provider>
   );
 };
 
-export default ContextProvider;
 ```
 
-```typescript
+```javascript
 import React, { useContext } from "react";
 import { ContextProvider, Context } from "./contextProvider";
 import { Landing } from "./pages/Landing";
 import { Theme } from "./Theme";
 import "./App.css";
 
-const App = (): React.ReactNode => {
+const App = () => {
   return (
     <ContextProvider>
       <div>
@@ -97,11 +74,11 @@ const App = (): React.ReactNode => {
 
 export default App;
 ```
-```typescript
+```javascript
 import React, { useContext } from "react";
 import { Context } from "./contextProvider";
 
-export const Theme: React.FC = (): React.ReactNode => {
+export const Theme = () => {
   const { darkMode, setDarkMode } = useContext(Context);
   return (
     <div style={{ display: "flex" }}>
