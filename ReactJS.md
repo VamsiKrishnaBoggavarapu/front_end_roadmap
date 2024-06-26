@@ -10,7 +10,7 @@
 - UseState hook add a state variable to the component.
 - UserState accept one parameter, that can set initail state.
 - UserState return an array of two values, Current state and set function.
-```react
+```typescript
 const [msg, setMsg] = useState("Hello");
 ```
 ### UseEffect hook
