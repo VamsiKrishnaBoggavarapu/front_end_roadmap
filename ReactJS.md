@@ -105,6 +105,48 @@ export const Landing = () => {
 ```
 
 ### UseReducer hook
+- Add a reducer to the component
+- const [state,dispatch] = userReducer(reducer, initalArg)
+```javascript
+import React, { useReducer } from "react";
+
+export const Landing = () => {
+  const reducer = (state, action) => {
+    if (action.type === "UPDATE") {
+      return {
+        users: [...state.users, { id: Math.random() }],
+      };
+    }
+    if (action.type === "DELETE") {
+      return {
+        users: state.users.slice(1),
+      };
+    }
+  };
+
+  const initalArg = { users: [{ id: Math.random() }] };
+
+  const [state, dispatch] = useReducer(reducer, initalArg);
+
+  const update = () => {
+    dispatch({ type: "UPDATE" });
+  };
+
+  const remove = () => {
+    dispatch({ type: "DELETE" });
+  };
+  return (
+    <div>
+      <button onClick={update}>Update</button>
+      <button onClick={remove}>Delete</button>
+      {state.users.map((x) => (
+        <p>{x.id}</p>
+      ))}
+    </div>
+  );
+};
+
+```
 ### UseRef hook
 ### UseCallback hook
 ### UseMemo hook
