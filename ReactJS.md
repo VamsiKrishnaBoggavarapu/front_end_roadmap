@@ -172,7 +172,43 @@ export const FirstPage = () => {
   );
 };
 ```
-### UseCallback hook
+### UseCallback hook & UseMemo hook
+- useCallback(function, [dependencies);
+- useCallback and useMemo are used to cache data to optimize performance.
+- useMemo is used to cache values and useCallback is used to cache function definitions, It will avoid un-unessessory re-renders.
+
+```javascript
+import React, { useCallback, useState } from "react";
+
+export const FirstPage = () => {
+  const [count, setCount] = useState(0);
+  // This function is not re-render every state updated
+  const cancelClick = useCallback(() => {
+    console.log("user clicked button", count);
+  }, []);
+
+  // This function is not re-render every time,
+  // It will re-render only when count is updating
+  const saveClick = useCallback(() => {
+    console.log("user clicked button", count);
+  }, [count]);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}>
+        Increase
+      </button>
+      <button onClick={cancelClick}>Cancel</button>
+      <button onClick={saveClick}>Save</button>
+    </div>
+  );
+};
+
+```
 ### UseMemo hook
 ### Custom hooks
 
