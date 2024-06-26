@@ -95,6 +95,10 @@ const App = (): React.ReactNode => {
 };
 
 export default App;
+```
+```typescript
+import React, { useContext } from "react";
+import { Context } from "./contextProvider";
 
 export const Theme: React.FC = (): React.ReactNode => {
   const { darkMode, setDarkMode } = useContext(Context);
@@ -104,7 +108,6 @@ export const Theme: React.FC = (): React.ReactNode => {
     </div>
   );
 };
-
 ```
 ```typescript
 import React, { useContext } from "react";
