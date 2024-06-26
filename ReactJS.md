@@ -36,6 +36,59 @@ useEffect(() => {
   }, []);
 ```
 ### UseContext hook
+- Easy to transfer the data from one component to another component
+```typescript
+import React, {
+  useState,
+  createContext,
+  Dispatch,
+  SetStateAction,
+} from "react";
+
+interface Props {
+  children: React.ReactNode;
+}
+
+interface ContextProps {
+  darkMode: boolean;
+  setDarkMode: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Context = createContext<ContextProps>({
+  darkMode: false,
+  setDarkMode: () => {},
+});
+
+export const ContextProvider: React.FC<Props> = ({ children }) => {
+  const [darkModeOn, setDarkModeOn] = useState<boolean>(false);
+
+  return (
+    <Context.Provider
+      value={{
+        darkMode: darkModeOn,
+        setDarkMode: setDarkModeOn,
+      }}>
+      {children}
+    </Context.Provider>
+  );
+};
+
+export default ContextProvider;
+
+import React, { useContext } from "react";
+import { Context } from "./contextProvider";
+
+export const ThemeChnage: React.FC = (): React.ReactNode => {
+  const { darkMode, setDarkMode } = useContext(Context);
+  return (
+    <div>
+      <button onClick={() => setDarkMode(true)}>ChangeTheme</button>
+    </div>
+  );
+};
+
+```
+
 ### UseReducer hook
 ### UseRef hook
 ### UseCallback hook
