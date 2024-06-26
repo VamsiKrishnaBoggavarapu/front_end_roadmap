@@ -173,7 +173,8 @@ export const FirstPage = () => {
 };
 ```
 ### UseCallback hook & UseMemo hook
-- useCallback(function, [dependencies);
+- useCallback(function, [dependencies]);
+- useMemo(function, [dependencies]);
 - useCallback and useMemo are used to cache data to optimize performance.
 - useMemo is used to cache values and useCallback is used to cache function definitions, It will avoid un-unessessory re-renders.
 
@@ -209,7 +210,10 @@ export const FirstPage = () => {
 };
 
 ```
-### UseMemo hook
+### UseLayoutEffect
+- useLayoutEffect is execute before the browser repaints the screen.
+- useLayoutEffect(setup, dependencies?)
+
 ### Custom hooks
 
 ## React Routing
