@@ -78,14 +78,46 @@ export default ContextProvider;
 import React, { useContext } from "react";
 import { Context } from "./contextProvider";
 
-export const ThemeChnage: React.FC = (): React.ReactNode => {
+import React, { useContext } from "react";
+import { ContextProvider, Context } from "./contextProvider";
+import { Landing } from "./pages/Landing";
+import { Theme } from "./Theme";
+import "./App.css";
+
+const App = (): React.ReactNode => {
+  return (
+    <ContextProvider>
+      <div>
+        <Theme />
+        <Landing />
+      </div>
+    </ContextProvider>
+  );
+};
+
+export default App;
+
+export const Theme: React.FC = (): React.ReactNode => {
   const { darkMode, setDarkMode } = useContext(Context);
   return (
-    <div>
-      <button onClick={() => setDarkMode(true)}>ChangeTheme</button>
+    <div style={{ display: "flex" }}>
+      <button onClick={() => setDarkMode(!darkMode)}>ChangeTheme</button>
     </div>
   );
 };
+import React, { useContext } from "react";
+import { Context } from "../contextProvider";
+import "../App.css";
+
+export const Landing = () => {
+  const { darkMode } = useContext(Context);
+  return (
+    <div className={darkMode ? "dark-theme" : "light-theme"}>
+      <h1>Hello</h1>
+    </div>
+  );
+};
+
 
 ```
 
