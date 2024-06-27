@@ -239,4 +239,11 @@ root.render(
   </StrictMode>
 );
 ```
+- Fragment: Fragment will group the elements without a wrapper node. It will avoid unnecessary node.
+```javascript
+<>
+  <OneChild />
+  <AnotherChild />
+</>
+```
 
