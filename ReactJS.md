@@ -227,7 +227,8 @@ export const FirstPage = () => {
 ## React Redux
 
 ## Other Feature
-- StrictMode: Find the bugs during development mode.
+### StrictMode
+** Find the bugs during development mode. **
 ```javascript
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
