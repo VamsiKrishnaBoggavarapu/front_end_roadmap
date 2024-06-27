@@ -228,7 +228,7 @@ export const FirstPage = () => {
 
 ## Other Feature
 ### StrictMode
-** Find the bugs during development mode. **
+__Find the bugs during development mode.__
 ```javascript
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
