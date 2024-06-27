@@ -6,7 +6,7 @@
 
 ## React Hooks
 - React-Hooks will help the developer job easier.
-### UseState hook
+### useState
 - UseState hook add a state variable to the component.
 - UserState accept one parameter, that can set initail state.
 - UserState return an array of two values, Current state and set function.
@@ -16,7 +16,7 @@ function updateMsg() {
     setMsg("Welcom");
 }
 ```
-### UseEffect hook
+### useEffect
 - Handle the lifecycle methods in function components (componentDidMount,componentDidUpdate and componentWillUnmount)
 - useEffect(setup, dependencies?)
 ```typescript
@@ -35,7 +35,7 @@ useEffect(() => {
     };
   }, []);
 ```
-### UseContext hook
+### useContext
 - Easy to transfer the data from one component to another component
   ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/useContext.png?raw=true)
 ```javascript
@@ -104,7 +104,7 @@ export const Landing = () => {
 };
 ```
 
-### UseReducer hook
+### useReducer
 - useReducer hook help to add a reducer to the component and it can managing more complex state logic.
 - Once place to handle state updates.
 - const [state,dispatch] = userReducer(reducer, initalArg)
@@ -151,7 +151,7 @@ export const Landing = () => {
 };
 
 ```
-### UseRef hook
+### useRef
 - Storing mutable values and avoid re-rendering when update the data.
 - Storing reference to DOM element and directly do the operations on DOM element.
 - const ref = useRef(initialValue)
@@ -172,7 +172,7 @@ export const FirstPage = () => {
   );
 };
 ```
-### UseCallback hook & UseMemo hook
+### useCallback & useMemo
 - useCallback(function, [dependencies]);
 - useMemo(function, [dependencies]);
 - useCallback and useMemo are used to cache data to optimize performance.
@@ -210,14 +210,33 @@ export const FirstPage = () => {
 };
 
 ```
-### UseLayoutEffect
+## useSyncExternalStore
+
+### useImperativeHandle
+
+### useLayoutEffect
 - useLayoutEffect is execute before the browser repaints the screen.
 - useLayoutEffect(setup, dependencies?)
+  
+### useInsertionEffect
 
-### Custom hooks
+### useDeferredValue
 
 ## React Routing
 
 ## React Redux
 
-![alt text](http://url/to/img.png)
+## Other Feature
+- StrictMode: Find the bugs during development mode.
+```javascript
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
+
