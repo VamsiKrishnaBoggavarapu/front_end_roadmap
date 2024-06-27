@@ -231,7 +231,6 @@ export const FirstPage = () => {
 ```javascript
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-
 const root = createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
@@ -246,4 +245,46 @@ root.render(
   <AnotherChild />
 </>
 ```
+- Profiler: It will measure the rendering performance of applications. Better to avoid this in production, It will impact some performance.
+```javascript
+<Profiler id="App" onRender={onRender}>
+  <App />
+</Profiler>
 
+function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {
+  // Aggregate or log render timings...
+}
+```
+- Suspense: Displaying a fallback while content is loading. It' like a placeholder.
+```javascript
+<Suspense fallback={<Loading />}>
+  <SomeComponent />
+</Suspense>
+```
+- Memo: It will avoid unnecessary re-rendering, It will re-render only memoizedcopoment props are changed.
+```javascript
+import React, { memo } from "react";
+export const Memo = memo(({ data }) => {
+  console.log("Calling Memo! - ", data);
+  return <label>{data}</label>;
+});
+
+import React, { useState } from "react";
+import { Memo } from "./Memo";
+export const FirstPage = () => {
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState("Hello");
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <Memo data={data} />
+      <button onClick={() => setData(Math.random())}>Save</button>
+    </div>
+  );
+};
+
+```
+- Lazy
+- 
