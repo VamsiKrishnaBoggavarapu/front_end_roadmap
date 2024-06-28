@@ -239,7 +239,8 @@ root.render(
   </StrictMode>
 );
 ```
-- Fragment: Fragment will group the elements without a wrapper node. It will avoid unnecessary node.
+### Fragment
+__Fragment will group the elements without a wrapper node. It will avoid unnecessary node.__
 ```javascript
 <>
   <OneChild />
@@ -256,13 +257,15 @@ function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime
   // Aggregate or log render timings...
 }
 ```
-- Suspense: Displaying a fallback while content is loading. It' like a placeholder.
+### Suspense: 
+__Displaying a fallback while content is loading. It' like a placeholder.__
 ```javascript
 <Suspense fallback={<Loading />}>
   <SomeComponent />
 </Suspense>
 ```
-- Memo: It will avoid unnecessary re-rendering, It will re-render only memoizedcopoment props are changed.
+### Memo: 
+__It will avoid unnecessary re-rendering, It will re-render only memoizedcopoment props are changed.__
 ```javascript
 import React, { memo } from "react";
 export const Memo = memo(({ data }) => {
@@ -287,5 +290,5 @@ export const FirstPage = () => {
 };
 
 ```
-- Lazy
+###Lazy
 - 
