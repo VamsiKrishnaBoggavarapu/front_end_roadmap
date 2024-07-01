@@ -225,7 +225,7 @@ export const FirstPage = () => {
 ## React Routing
 
 ## React Redux
-
+- In a Redux application, middleware is a function that sits between the action and the reducer. It is called with the action and the store’s dispatch and getState functions as arguments. Middleware can be used to perform a variety of tasks, such as making API calls, logging information to the console, or persisting the state of the store.
 ## Other Feature
 ### StrictMode
 __Find the bugs during development mode.__
@@ -290,5 +290,5 @@ export const FirstPage = () => {
 };
 
 ```
-###Lazy
+### Lazy
 - 
