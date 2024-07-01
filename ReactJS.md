@@ -225,9 +225,11 @@ export const FirstPage = () => {
 ## React Routing
 
 ## React Redux
-- In a Redux application, middleware is a function that sits between the action and the reducer. It is called with the action and the store’s dispatch and getState functions as arguments. Middleware can be used to perform a variety of tasks, such as making API calls, logging information to the console, or persisting the state of the store.
 - ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/redux_lifecycle.gif?raw=true)
-- 
+- ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/redux-toolkit-architecture.png?raw=true)
+### Middleware
+__In a Redux application, middleware is a function that sits between the action and the reducer. Middleware can be used to perform a variety of tasks, such as making API calls, logging information to the console, or persisting the state of the store.__
+
 ## Other Feature
 ### StrictMode
 __Find the bugs during development mode.__
@@ -249,7 +251,8 @@ __Fragment will group the elements without a wrapper node. It will avoid unneces
   <AnotherChild />
 </>
 ```
-- Profiler: It will measure the rendering performance of applications. Better to avoid this in production, It will impact some performance.
+### Profiler
+__It will measure the rendering performance of applications. Better to avoid this in production, It will impact some performance.__
 ```javascript
 <Profiler id="App" onRender={onRender}>
   <App />
