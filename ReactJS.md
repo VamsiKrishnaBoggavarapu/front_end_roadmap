@@ -250,6 +250,57 @@ const loaderSlice = createSlice({
 export const { showLoader, stopLoader } = loaderSlice.actions;
 export default loaderSlice.reducer;
 ```
+### CreateAsyncThunk
+```javascript
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import api from "../../api";
+
+export const getProducts = createAsyncThunk("/products", async () => {
+  const res = await api({ url: "/products" });
+  return res.data;
+});
+
+import { createSlice } from "@reduxjs/toolkit";
+import { getProducts } from "./productsApi";
+
+const productsSlice = createSlice({
+  name: "products",
+  initialState: {},
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getProducts.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getProducts.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.products = payload;
+      })
+      .addCase(getProducts.rejected, (state) => {
+        state.loading = false;
+      });
+  },
+});
+
+export default productsSlice.reducer;
+```
+### Store
+```javascript
+import { configureStore } from "@reduxjs/toolkit";
+import { logger } from "redux-logger";
+import loaderSlice from "./slices/loaderSlice";
+import productsSlice from "./features/products/productsSlice";
+
+export const store = configureStore({
+  reducer: {
+    loader: loaderSlice,
+    products: productsSlice,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({}).concat(logger),
+  devTools: true,
+});
+
+```
 ### Middleware
 __In a Redux application, middleware is a function that sits between the action and the reducer. Middleware can be used to perform a variety of tasks, such as making API calls, logging information to the console, or persisting the state of the store.__
 
