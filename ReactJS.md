@@ -227,6 +227,29 @@ export const FirstPage = () => {
 ## React Redux
 - ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/redux_lifecycle.gif?raw=true)
 - ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/redux-toolkit-architecture.png?raw=true)
+### CreateSlice
+```javascript
+import { createSlice } from "@reduxjs/toolkit";
+
+const loaderSlice = createSlice({
+  name: "loader",
+  initialState: {
+    loading: false,
+  },
+
+  reducers: {
+    showLoader: (state) => {
+      state.loading = true;
+    },
+    stopLoader: (state) => {
+      state.loading = false;
+    },
+  },
+});
+
+export const { showLoader, stopLoader } = loaderSlice.actions;
+export default loaderSlice.reducer;
+```
 ### Middleware
 __In a Redux application, middleware is a function that sits between the action and the reducer. Middleware can be used to perform a variety of tasks, such as making API calls, logging information to the console, or persisting the state of the store.__
 
