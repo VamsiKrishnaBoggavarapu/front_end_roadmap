@@ -9,6 +9,7 @@
 - It can imporve the speed up the initial page load time.
 - It can manage the traffic better way.
 - [react-lazy-load library](https://www.npmjs.com/package/react-lazy-load)
+- Assert sizes should be lower. 
 
 ### Memoization
 __Memoization is a powerful technique to optimize the performance of your React applications, especially when dealing with expensive calculations and large amount data. It can be memoized the data and avoid unnecessary re-renders.__
@@ -39,3 +40,7 @@ const ParentComponent = () => {
   return <ChildComponent onClick={handleClick} />;
 };
 ```
+
+### Throttling & Debouncing Events
+__Throttling and debouncing are techniques used to optimize the performance of React applications by controlling the frequency of function calls in response to events like scrolling, resizing, or typing.__
+▶️ __Throttling:__ Function repeatedly calling after given intervel(Mouse moving or Window resizing...)
