@@ -43,4 +43,5 @@ const ParentComponent = () => {
 
 ### Throttling & Debouncing Events
 __Throttling and debouncing are techniques used to optimize the performance of React applications by controlling the frequency of function calls in response to events like scrolling, resizing, or typing.__
-▶️ __Throttling:__ Function repeatedly calling after given intervel(Mouse moving or Window resizing...)
+- __Throttling:__ Function repeatedly calling after given intervel. (Mouse moving or Window resizing...)
+- __Debouncing:__ Function calling after certain interval of time period. (Search input...)
