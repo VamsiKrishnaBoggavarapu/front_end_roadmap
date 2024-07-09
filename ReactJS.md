@@ -1,43 +1,54 @@
 # ReactJS
+
 - React is open-source javascript library for build user interfaces.
 - Improved performance: React uses a virtual DOM to keep track of changes to the UI. When a component's state changes, React updates the virtual DOM. The virtual DOM is then compared to the real DOM, and the real DOM is updated only if necessary. This makes React applications very efficient.
 - Resuable components: Components are the building blocks of React applications. A component is a piece of code that encapsulates HTML, CSS, and JavaScript. Components can be nested inside other components to create complex UIs.
 - Unidirectional data flow: React follows a unidirectional data flow.
 
 ## React Hooks
+
 - React-Hooks will help the developer job easier.
+
 ### useState
+
 - UseState hook add a state variable to the component.
 - UserState accept one parameter, that can set initail state.
 - UserState return an array of two values, Current state and set function.
+
 ```javascript
 const [msg, setMsg] = useState("Hello");
 function updateMsg() {
-    setMsg("Welcom");
+  setMsg("Welcom");
 }
 ```
+
 ### useEffect
+
 - Handle the lifecycle methods in function components (componentDidMount,componentDidUpdate and componentWillUnmount)
 - useEffect(setup, dependencies?)
+
 ```typescript
 useEffect(() => {
-    console.log("componentDidMount");
-  }, []);
+  console.log("componentDidMount");
+}, []);
 
 useEffect(() => {
-    console.log("componentDidUpdate");
-  }, [msg]);
+  console.log("componentDidUpdate");
+}, [msg]);
 
 useEffect(() => {
-    console.log("componentWillUnmount");
-    return () => {
-      // Add clean up logic
-    };
-  }, []);
+  console.log("componentWillUnmount");
+  return () => {
+    // Add clean up logic
+  };
+}, []);
 ```
+
 ### useContext
+
 - Easy to transfer the data from one component to another component
-  ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/useContext.png?raw=true)
+  ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/useContext.png?raw=true)
+
 ```javascript
 import React, { createContext, useState } from "react";
 
@@ -51,7 +62,6 @@ export const ContextProvider = ({ children }) => {
     </Context.Provider>
   );
 };
-
 ```
 
 ```javascript
@@ -105,9 +115,11 @@ export const Landing = () => {
 ```
 
 ### useReducer
+
 - useReducer hook help to add a reducer to the component and it can managing more complex state logic.
 - Once place to handle state updates.
 - const [state,dispatch] = userReducer(reducer, initalArg)
+
 ```javascript
 import React, { useReducer } from "react";
 
@@ -149,12 +161,14 @@ export const Landing = () => {
     </div>
   );
 };
-
 ```
+
 ### useRef
+
 - Storing mutable values and avoid re-rendering when update the data.
 - Storing reference to DOM element and directly do the operations on DOM element.
 - const ref = useRef(initialValue)
+
 ```javascript
 import React, { useEffect, useRef } from "react";
 
@@ -172,7 +186,9 @@ export const FirstPage = () => {
   );
 };
 ```
+
 ### useCallback & useMemo
+
 - useCallback(function, [dependencies]);
 - useMemo(function, [dependencies]);
 - useCallback and useMemo are used to cache data to optimize performance.
@@ -208,16 +224,17 @@ export const FirstPage = () => {
     </div>
   );
 };
-
 ```
+
 ## useSyncExternalStore
 
 ### useImperativeHandle
 
 ### useLayoutEffect
+
 - useLayoutEffect is execute before the browser repaints the screen.
 - useLayoutEffect(setup, dependencies?)
-  
+
 ### useInsertionEffect
 
 ### useDeferredValue
@@ -225,9 +242,12 @@ export const FirstPage = () => {
 ## React Routing
 
 ## React Redux
-- ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/redux_lifecycle.gif?raw=true)
-- ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/redux-toolkit-architecture.png?raw=true)
+
+- ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/redux_lifecycle.gif?raw=true)
+- ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/redux-toolkit-architecture.png?raw=true)
+
 ### CreateSlice
+
 ```javascript
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -250,7 +270,9 @@ const loaderSlice = createSlice({
 export const { showLoader, stopLoader } = loaderSlice.actions;
 export default loaderSlice.reducer;
 ```
+
 ### CreateAsyncThunk
+
 ```javascript
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../api";
@@ -284,7 +306,9 @@ const productsSlice = createSlice({
 
 export default productsSlice.reducer;
 ```
+
 ### Store
+
 ```javascript
 import { configureStore } from "@reduxjs/toolkit";
 import { logger } from "redux-logger";
@@ -299,52 +323,75 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({}).concat(logger),
   devTools: true,
 });
-
 ```
+
 ### Middleware
-__In a Redux application, middleware is a function that sits between the action and the reducer. Middleware can be used to perform a variety of tasks, such as making API calls, logging information to the console, or persisting the state of the store.__
+
+**In a Redux application, middleware is a function that sits between the action and the reducer. Middleware can be used to perform a variety of tasks, such as making API calls, logging information to the console, or persisting the state of the store.**
 
 ## Other Feature
+
 ### StrictMode
-__Find the bugs during development mode.__
+
+**Find the bugs during development mode.**
+
 ```javascript
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-const root = createRoot(document.getElementById('root'));
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <App />
   </StrictMode>
 );
 ```
+
 ### Fragment
-__Fragment will group the elements without a wrapper node. It will avoid unnecessary node.__
+
+**Fragment will group the elements without a wrapper node. It will avoid unnecessary node.**
+
 ```javascript
 <>
   <OneChild />
   <AnotherChild />
 </>
 ```
+
 ### Profiler
-__It will measure the rendering performance of applications. Better to avoid this in production, It will impact some performance.__
+
+**It will measure the rendering performance of applications. Better to avoid this in production, It will impact some performance.**
+
 ```javascript
 <Profiler id="App" onRender={onRender}>
   <App />
-</Profiler>
+</Profiler>;
 
-function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {
+function onRender(
+  id,
+  phase,
+  actualDuration,
+  baseDuration,
+  startTime,
+  commitTime
+) {
   // Aggregate or log render timings...
 }
 ```
-### Suspense: 
-__Displaying a fallback while content is loading. It' like a placeholder.__
+
+### Suspense:
+
+**Displaying a fallback while content is loading. It' like a placeholder.**
+
 ```javascript
 <Suspense fallback={<Loading />}>
   <SomeComponent />
 </Suspense>
 ```
-### Memo: 
-__It will avoid unnecessary re-rendering, It will re-render only memoizedcopoment props are changed.__
+
+### Memo:
+
+**It will avoid unnecessary re-rendering, It will re-render only memoizedcopoment props are changed.**
+
 ```javascript
 import React, { memo } from "react";
 export const Memo = memo(({ data }) => {
@@ -367,7 +414,8 @@ export const FirstPage = () => {
     </div>
   );
 };
-
 ```
+
 ### Lazy
-- 
+
+-
