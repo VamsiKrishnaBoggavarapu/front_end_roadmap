@@ -76,4 +76,16 @@
 ## HTTP Versions
 
 **HTTP1 ➡️ HTTP1.1 ➡️ HTTP2 ➡️ HTTP3**
+<table>
+  <tr>
+    <td>First Screen Page</td>
+     <td>Holiday Mention</td>
+     <td>Present day in purple and selected day in pink</td>
+  </tr>
+  <tr>
+    <td><img src="[screenshots/Screenshot_1582745092.png](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http1_http1.1.png)" width=270 height=480></td>
+    <td><img src="screenshots/Screenshot_1582745125.png" width=270 height=480></td>
+    <td><img src="screenshots/Screenshot_1582745139.png" width=270 height=480></td>
+  </tr>
+ </table>
 ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http1_http1.1.png?raw=true) ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http2.png?raw=true) ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http3.png?raw=true)
