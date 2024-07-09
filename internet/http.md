@@ -83,8 +83,8 @@
      <td>HTTP3</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http1_http1.1.png" width=270 height=480></td>
-    <td><img src="https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http2.png" width=270 height=480></td>
-    <td><img src="https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http3.png" width=270 height=480></td>
+    <td><img src="https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http1_http1.1.png" width=350 height=400></td>
+    <td><img src="https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http2.png" width=350 height=400></td>
+    <td><img src="https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http3.png" width=350 height=400></td>
   </tr>
  </table>
