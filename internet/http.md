@@ -76,6 +76,4 @@
 ## HTTP Versions
 
 **HTTP1 ➡️ HTTP1.1 ➡️ HTTP2 ➡️ HTTP3**
-![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http1_http1.1.png?raw=true) | 
-![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http2.png?raw=true) |
-![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http3.png?raw=true)
+![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http1_http1.1.png?raw=true) | ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http2.png?raw=true) | ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/http3.png?raw=true)
