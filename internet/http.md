@@ -78,7 +78,7 @@
 **HTTP1 ➡️ HTTP1.1 ➡️ HTTP2 ➡️ HTTP3**
 <table>
   <tr>
-    <td>HTTP1 & HTTP1.1</td>
+    <td>**HTTP1 & HTTP1.1**</td>
      <td>HTTP2</td>
      <td>HTTP3</td>
   </tr>
