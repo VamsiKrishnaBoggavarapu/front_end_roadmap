@@ -21,8 +21,8 @@ name = "wxyz"; // With strict mode it will show error in compile time.
 ### Object references and copying
 
 ```javascript
-let obj1 = {};
+let obj1 = { user };
 let obj2 = obj1; // copy the reference
 
-alert( a === b ); // true,  both variables reference the same object
+alert( obj1 === obj2 ); // true, Same reference 
 ```
