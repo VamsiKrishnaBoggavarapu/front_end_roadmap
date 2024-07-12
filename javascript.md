@@ -20,11 +20,15 @@ name = "wxyz"; // With strict mode it will show error in compile time.
 
 ### Object references and copying
 
+- To clone the object we can use Object.assign()
+- To clone the nested objects we can use structuredClone().
+
+```javascript
 const obj1 = {
   name: "xyz",
   measure: {
     height: 6,
-    weigth: 80,
+    weight: 80,
   },
 };
 const obj2 = obj1; // copy the reference
@@ -33,10 +37,9 @@ obj2 === obj1; // true, same reference.
 const obj3 = Object.assign({}, obj1); // Not copy the reference
 obj1 === obj3; // false
 
-obj3.measure === obj1.measure; //true, because obj3.measure is an object and will be copied by reference Object.assign() will not work for nested objects.
+obj3.measure === obj1.measure;
+// true, because obj3.measure is an object and will be copied by reference Object.assign() will not work for nested objects.
 
 const obj4 = structuredClone(obj1);
-obj4.measure === obj1.measure; // false, structuredClone will clone nexsted objects also.
-
-// To clone the object we can use Object.assign().
-// To clone the nested objects we can use structuredClone().
+obj4.measure === obj1.measure; // false, structuredClone will clone nested objects also.
+```
