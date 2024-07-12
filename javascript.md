@@ -20,9 +20,23 @@ name = "wxyz"; // With strict mode it will show error in compile time.
 
 ### Object references and copying
 
-```javascript
-let obj1 = { user };
-let obj2 = obj1; // copy the reference
+const obj1 = {
+  name: "xyz",
+  measure: {
+    height: 6,
+    weigth: 80,
+  },
+};
+const obj2 = obj1; // copy the reference
+obj2 === obj1; // true, same reference.
 
-alert( obj1 === obj2 ); // true, Same reference 
-```
+const obj3 = Object.assign({}, obj1); // Not copy the reference
+obj1 === obj3; // false
+
+obj3.measure === obj1.measure; //true, because obj3.measure is an object and will be copied by reference Object.assign() will not work for nested objects.
+
+const obj4 = structuredClone(obj1);
+obj4.measure === obj1.measure; // false, structuredClone will clone nexsted objects also.
+
+// To clone the object we can use Object.assign().
+// To clone the nested objects we can use structuredClone().
