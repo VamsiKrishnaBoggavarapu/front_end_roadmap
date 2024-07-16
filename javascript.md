@@ -159,6 +159,63 @@ user.getFullName; // Vamsi Krishna
 // }
 ```
 
+## Error Handling
+
+- The try...catch construct allows to handle runtime errors.
+- It allows to “try” running the code and “catch” errors that may occur in it.
+- try block required catch or finally blocks.
+- try...catch works synchronously
+
+- Error objects have following properties:
+
+  - **message:** The human-readable error message.
+  - **name:** The string with error name (error constructor name).
+  - **stack:** The stack at the moment of error creation.
+
+```javascript
+try {
+  // run this code
+} catch (err) {
+  // if an error happened, then jump here
+  // err is the error object
+} finally {
+  // do in any case after try/catch
+}
+```
+
+```javascript
+// Global errors
+window.onerror = function (message, url, line, col, error) {};
+```
+
+```javascript
+// Custom errors
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+
+class PropertyRequiredError extends ValidationError {
+  constructor(property) {
+    super("No property: " + property);
+    this.property = property;
+  }
+}
+
+(() => {
+  try {
+    throw new ValidationError("Whoops!");
+    // throw new PropertyRequiredError("field");
+  } catch (err) {
+    console.log(err.message); // Whoops!
+    console.log(err.name); // ValidationError
+    console.log(err.stack); // a list of nested calls with line numbers for each
+  }
+})();
+```
+
 ## Advanced working with functions
 
 ### Recursion
