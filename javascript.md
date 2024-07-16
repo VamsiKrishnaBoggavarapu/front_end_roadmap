@@ -129,6 +129,36 @@ const details = Object.getOwnPropertyDescriptor(obj1, "firstName");
 // }
 ```
 
+### Property getters and setters
+
+- **get:** A function without arguments, that works when a property is read.
+- **set:** A function with one argument, that is called when the property is set.
+
+```javascript
+const user = {
+  firstName: "Vamsi",
+  lastName: "Krishna",
+  age: "",
+  get getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  set setAge(value) {
+    this.age = new Date().getFullYear() - value.getFullYear();
+  },
+};
+
+user.setAge = new Date("07/15/1993");
+user.getFullName; // Vamsi Krishna
+
+// {
+//   firstName: 'Vamsi',
+//   lastName: 'Krishna',
+//   age: 31,
+//   getFullName: [Getter],
+//   setAge: [Setter]
+// }
+```
+
 ## Advanced working with functions
 
 ### Recursion
