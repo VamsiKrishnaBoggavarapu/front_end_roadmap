@@ -1,14 +1,20 @@
-### use strict
+## JavaScript Basic
 
-- "use strict" need to define the top of script.
-- Avoid unnecessary coding mistakes.
+**JavaScript is High-Level Object-Oriented, Multi-Paradigm and dynamic typed programming language. Using JavaScript develop web, mobile and server side applications**
 
-```javascript
-name = "wxyz"; // Without strict mode don't see any issues.
+### DataTypes
 
-("use strict");
-name = "wxyz"; // With strict mode it will show error in compile time.
-```
+### Var, Let and Const
+
+### Functions
+
+## JavaScript Execution Process
+
+### JavaScript Engine
+
+### Event Loop
+
+### V8 Engine
 
 ## Object
 
@@ -159,6 +165,119 @@ user.getFullName; // Vamsi Krishna
 // }
 ```
 
+## CLasses
+
+### Basic classes and Inheritance
+
+```javascript
+class Button {
+  constructor(text) {
+    this.text = text;
+  }
+  get text() {
+    return this._text;
+  }
+  set text(value) {
+    if (value.length > 3) this._text = value;
+  }
+  styles() {
+    console.log("button styles");
+  }
+  click = () => {
+    console.log("button click me");
+  };
+}
+
+class LinkButton extends Button {
+  constructor(name) {
+    super(name);
+  }
+  // Method Override
+  styles() {
+    console.log("link button styles");
+  }
+}
+
+class ArrowButton extends Button {
+  // Constructor Override
+  constructor(name, icon) {
+    super(name);
+    this.icon = icon;
+  }
+}
+```
+
+### Static Properties and methods
+
+```javascript
+class Button {
+  constructor(text) {
+    this.text = text;
+  }
+
+  static type = "button";
+  static onFocus = () => {
+    console.log("button focus", this.type);
+  };
+}
+
+class LinkButton extends Button {
+  constructor(name) {
+    super(name);
+  }
+  // Method Override
+  static onFocus() {
+    console.log("link button focus", this.type);
+  }
+}
+```
+
+### Public, Protected and Private properties and methods
+
+```javascript
+class Label {
+  #defaultColor = "Black";
+  #defaultFont = "Arial";
+  _fontSize = "10px";
+  constructor(text) {
+    this.text = text;
+  }
+}
+
+class H1 extends Label {
+  _fontSize = "20px";
+  static padding = "10px";
+  static margin = "10px";
+  constructor(text) {
+    super(text);
+    console.log(this);
+  }
+  setPadding() {}
+}
+
+class H2 extends Label {
+  _fontSize = "18px";
+  constructor(text) {
+    super(text);
+    console.log(this);
+  }
+}
+```
+
+### Extending built-in classes
+
+```javascript
+class DataArray extends Array {
+  isEmpty() {
+    return this.length === 0;
+  }
+}
+const num1 = new DataArray(1, 2, 3);
+const num2 = new DataArray();
+num1.isEmpty(); // false
+num2.isEmpty(); // true
+```
+
 ## Error Handling
 
 - The try...catch construct allows to handle runtime errors.
@@ -216,7 +335,86 @@ class PropertyRequiredError extends ValidationError {
 })();
 ```
 
-## Advanced working with functions
+## ProtoType
+
+## Callback, Promises and Async/Await
+
+## Dom Operations
+
+## Storage
+
+### Cookie
+
+- Capacity 4KB.
+- Access from any where in browser.
+- Manually set the expire date to clear the cookie data.
+- Store in browser and server.
+
+```javascript
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  date.toUTCString();
+  document.cookie = `${name}=${value}; expires=${date}; path=/`;
+}
+```
+
+```javascript
+function deleteCookie(name) {
+  document.cookie = `${name}=${null}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+```
+
+```javascript
+function getCookie(name) {
+  const cookieArr = document.cookie?.split(";");
+  for (let i = 0; i < cookieArr.length; i++) {
+    let cookie = cookieArr[i].split("=");
+    if (cookie[0].trim() === name) {
+      return cookie[1];
+    }
+  }
+}
+```
+
+### Session Storage
+
+- Capacity 5MB.
+- Access only current tab in browser.
+- Once close the tab session data will cleared.
+- Store in browser.
+
+```javascript
+window.sessionStorage.setItem("userName", "vamsi");
+window.sessionStorage.getItem("userName");
+```
+
+### Local Storage
+
+- Capacity 10MB.
+- Access from any where in browser.
+- Never clear the local storage data. Programmatically need to clear the data.
+- Store in browser.
+
+```javascript
+window.localStorage.setItem("email", "vamsi@gmail.com");
+let email = window.localStorage.getItem("email");
+window.localStorage.removeItem("email");
+window.localStorage.clear();
+```
+
+## Other
+
+### use strict
+
+**"use strict" need to define the top of script. Avoid unnecessary coding mistakes.**
+
+```javascript
+name = "vamsi"; // Without strict mode don't see any issues.
+
+("use strict");
+name = "vamsi"; // With strict mode it will show error in compile time.
+```
 
 ### Recursion
 
