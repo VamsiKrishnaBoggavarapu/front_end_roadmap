@@ -5,6 +5,14 @@
 - Resuable components: Components are the building blocks of React applications. A component is a piece of code that encapsulates HTML, CSS, and JavaScript. Components can be nested inside other components to create complex UIs.
 - Unidirectional data flow: React follows a unidirectional data flow.
 
+
+## Advanced State Management
+
+### Context API with Optimizations: ###
+- React’s Context API is a powerful feature for managing state and passing data through the component tree without having to prop-drill from parent to child manually.
+- Create a Context: This is done using React.createContext(). It returns a Context object. 
+- Provide a Context Value: The Context.Provider component allows you to define the context value that child components can consume. 
+- Consume the Context: This can be done using the Context.Consumer component or the useContext hook in functional components.
 ## React Hooks
 
 - React-Hooks will help the developer job easier.
