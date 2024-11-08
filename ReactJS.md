@@ -85,8 +85,8 @@ export const Landing = () => {
 
 - __Context Creation:__ When you create a context using React.createContext(), React internally creates a "context object." This object is designed to carry data and is not tied to any specific component instance.
 - __Provider Pattern:__ The Context.Provider component is a special type of React component that takes a value prop and passes it down to all its child components, regardless of the component hierarchy. Internally, React propagates this value down the tree.
-- __Consumption:__ The useContext hook (or Context.Consumer in-class components) allows any component in the tree to subscribe to the context's value. Subscription in the React Context API refers to the process by which a component gains access to context values. By subscribing to a context, a component can read its value and re-render whenever the context value changes (e.g., the user logs in or out), all components that consume this context are re-rendered with the new value.
-- __Propagation Mechanism:__ React uses a propagation mechanism to pass the context value down the tree without having to explicitly pass props at each level. This is achieved using React’s internal instance tree, ensuring that the context changes are efficiently propagated to only the components that need them. React internally handles the distribution of this value down the component tree. This means any child component, no matter how deeply nested, can access the context value if it subscribes to the context.
+- __Consumption:__ The useContext hook allows any component in the tree to subscribe to the context's value. By subscribing to a context, a component can read its value and re-render whenever the context value changes, all components that consume this context are re-rendered with the new value.
+- __Propagation Mechanism:__ React uses a propagation mechanism to pass the context value down the tree without having to explicitly pass props at each level.
 
 
 ## React Hooks
