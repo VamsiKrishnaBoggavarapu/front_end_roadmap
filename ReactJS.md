@@ -14,59 +14,7 @@
 - Provide a Context Value: The Context.Provider component allows you to define the context value that child components can consume. 
 - Consume the Context: This can be done using the Context.Consumer component or the useContext hook in functional components.
 
-#### How the Context API Works:####
-- The Context API in React works on the principle of “context propagation.”
-
-- __Context Creation:__ When you create a context using React.createContext(), React internally creates a "context object." This object is designed to carry data and is not tied to any specific component instance.
-- __Provider Pattern:__ The Context.Provider component is a special type of React component that takes a value prop and passes it down to all its child components, regardless of the component hierarchy. Internally, React propagates this value down the tree.
-- __Consumption:__ The useContext hook (or Context.Consumer in-class components) allows any component in the tree to subscribe to the context's value. Subscription in the React Context API refers to the process by which a component gains access to context values. By subscribing to a context, a component can read its value and re-render whenever the context value changes (e.g., the user logs in or out), all components that consume this context are re-rendered with the new value.
-- __Propagation Mechanism:__ React uses a propagation mechanism to pass the context value down the tree without having to explicitly pass props at each level. This is achieved using React’s internal instance tree, ensuring that the context changes are efficiently propagated to only the components that need them. React internally handles the distribution of this value down the component tree. This means any child component, no matter how deeply nested, can access the context value if it subscribes to the context.
-
-
-## React Hooks
-
-- React-Hooks will help the developer job easier.
-
-### useState
-
-- UseState hook add a state variable to the component.
-- UserState accept one parameter, that can set initail state.
-- UserState return an array of two values, Current state and set function.
-
-```javascript
-const [msg, setMsg] = useState("Hello");
-function updateMsg() {
-  setMsg("Welcom");
-}
-```
-
-### useEffect
-
-- Handle the lifecycle methods in function components (componentDidMount,componentDidUpdate and componentWillUnmount)
-- useEffect(setup, dependencies?)
-
-```typescript
-useEffect(() => {
-  console.log("componentDidMount");
-}, []);
-
-useEffect(() => {
-  console.log("componentDidUpdate");
-}, [msg]);
-
-useEffect(() => {
-  console.log("componentWillUnmount");
-  return () => {
-    // Add clean up logic
-  };
-}, []);
-```
-
-### useContext
-
-- Easy to transfer the data from one component to another component
-  ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/useContext.png?raw=true)
-
+#### Example ####
 ```javascript
 import React, { createContext, useState } from "react";
 
@@ -131,6 +79,61 @@ export const Landing = () => {
   );
 };
 ```
+
+#### How the Context API Works: ####
+- The Context API in React works on the principle of “context propagation.”
+
+- __Context Creation:__ When you create a context using React.createContext(), React internally creates a "context object." This object is designed to carry data and is not tied to any specific component instance.
+- __Provider Pattern:__ The Context.Provider component is a special type of React component that takes a value prop and passes it down to all its child components, regardless of the component hierarchy. Internally, React propagates this value down the tree.
+- __Consumption:__ The useContext hook (or Context.Consumer in-class components) allows any component in the tree to subscribe to the context's value. Subscription in the React Context API refers to the process by which a component gains access to context values. By subscribing to a context, a component can read its value and re-render whenever the context value changes (e.g., the user logs in or out), all components that consume this context are re-rendered with the new value.
+- __Propagation Mechanism:__ React uses a propagation mechanism to pass the context value down the tree without having to explicitly pass props at each level. This is achieved using React’s internal instance tree, ensuring that the context changes are efficiently propagated to only the components that need them. React internally handles the distribution of this value down the component tree. This means any child component, no matter how deeply nested, can access the context value if it subscribes to the context.
+
+
+## React Hooks
+
+- React-Hooks will help the developer job easier.
+
+### useState
+
+- UseState hook add a state variable to the component.
+- UserState accept one parameter, that can set initail state.
+- UserState return an array of two values, Current state and set function.
+
+```javascript
+const [msg, setMsg] = useState("Hello");
+function updateMsg() {
+  setMsg("Welcom");
+}
+```
+
+### useEffect
+
+- Handle the lifecycle methods in function components (componentDidMount,componentDidUpdate and componentWillUnmount)
+- useEffect(setup, dependencies?)
+
+```typescript
+useEffect(() => {
+  console.log("componentDidMount");
+}, []);
+
+useEffect(() => {
+  console.log("componentDidUpdate");
+}, [msg]);
+
+useEffect(() => {
+  console.log("componentWillUnmount");
+  return () => {
+    // Add clean up logic
+  };
+}, []);
+```
+
+### useContext
+
+- Easy to transfer the data from one component to another component
+  ![alt text](https://github.com/VamsiKrishnaBoggavarapu/web_applications_basics/blob/main/images/useContext.png?raw=true)
+
+
 
 ### useReducer
 
